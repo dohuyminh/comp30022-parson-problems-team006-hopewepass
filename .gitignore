@@ -1,0 +1,3 @@
+# Ignoring .env files (for the API key)
+.env
+.env.test
