@@ -1,0 +1,8 @@
+This assumes you already have node.js installed
+
+To create package.json file ->npm init -y 
+    under scripts ->"dev": "nodemon server.js",
+Server demon ->npm i --save-dev nodemon
+Server library ->npm install express
+To start server ->npm run dev
+String formatting -> npm install string-format

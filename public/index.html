@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="input"/>
+        <button id="get">get</button>
+        <button id="get2">get2</button>
+        <button id="post">post</button>
+    </form>
+    <script>
+        const getBtn = document.getElementById('get')
+        const getBtn2 = document.getElementById('get2')
+        const postBtn = document.getElementById('post')
+        const input = document.getElementById('input')
+
+        const baseURL = 'http://localhost:8383/'
+        getBtn.addEventListener('click', getInfo)
+        postBtn.addEventListener('click', postInfo)
+        getBtn2.addEventListener('click', getInfo2)
+        async function getInfo(e) {
+            e.preventDefault()
+            const res = await fetch(baseURL + "info/", {
+                method: 'GET'
+            })
+            console.log(res)
+            console.log("Used get info")
+            const data = await res.json()
+            input.value = data.info
+        }
+
+        async function postInfo(e) {
+            e.preventDefault()
+            if (input.value == '') {
+                return
+            }
+            const res = await fetch(baseURL, {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify ({
+                    parcel: input.value // whatever is in the const input will be sent
+                })
+            })
+            console.log(res)
+            console.log("Used post")
+
+        }
+
+        async function getInfo2(e) {
+            e.preventDefault()
+            const res = await fetch("http://localhost:8383/info2", {
+                method: 'GET'
+            })
+            console.log(res)
+            console.log("used second get info")
+            const data = await res.json()
+            input.value = data.info
+        }
+
+
+    </script>
+</body>
+</html>
