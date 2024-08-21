@@ -10,8 +10,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "jspython-interpreter": "^2.1.15",
-    "python-shell": "^1.0.8",
-    "dotenv": "^8.2.0"
+    "python-shell": "5.0.0",
+    "dotenv": "^8.2.0",
+    "@google/generative-ai": "^0.1.1"
   }
 }
