@@ -10,6 +10,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "jspython-interpreter": "^2.1.15"
+    "jspython-interpreter": "^2.1.15",
+    "python-shell": "^1.0.8",
+    "dotenv": "^8.2.0"
   }
 }
