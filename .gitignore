@@ -1,0 +1,6 @@
+# Ignoring .env files (for the API key)
+.env
+.env.test
+
+# Ignore node_modules
+node_modules/
